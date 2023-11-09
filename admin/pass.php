@@ -1,5 +1,6 @@
 <?php
 session_start();
+require '../conn.php';
 
 if (!isset($_SESSION['idpengguna'])) {
     header('location: login.php');
