@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2023 at 09:58 AM
+-- Generation Time: Nov 09, 2023 at 08:34 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -32,6 +32,13 @@ CREATE TABLE `admin` (
   `katalaluan` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`idadmin`, `katalaluan`) VALUES
+(1, '$2y$10$6OS8k9Vouyq7iNBmztG2ze.WkVt/yReW7VO/GCuYttPCKXlQl1mTq');
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +52,13 @@ CREATE TABLE `pelajar` (
   `nokppelajar` int(12) NOT NULL,
   `katalaluan` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pelajar`
+--
+
+INSERT INTO `pelajar` (`idpelajar`, `warden`, `namapelajar`, `nokppelajar`, `katalaluan`) VALUES
+(1, '', '', 0, '$2y$10$W0Cv0FkefaUdY5OQVyMKBuWsjPQHUMHdGEZ/i3U5p.WD.oUKlX4OO');
 
 -- --------------------------------------------------------
 
@@ -60,6 +74,16 @@ CREATE TABLE `peralatan` (
   `nosiri` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `peralatan`
+--
+
+INSERT INTO `peralatan` (`idperalatan`, `pelajar`, `jenisperalatan`, `jenama`, `nosiri`) VALUES
+(2, 'haikal', 'racket', 'toyota', 1),
+(3, 'syat', 'kayu', 'protegi', 2),
+(4, 'ainin', 'bola', 'adidas', 3),
+(5, 'piya', 'piring terbang', 'adidas', 4);
+
 -- --------------------------------------------------------
 
 --
@@ -72,6 +96,13 @@ CREATE TABLE `warden` (
   `nokpwarden` int(12) NOT NULL,
   `katalaluan` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `warden`
+--
+
+INSERT INTO `warden` (`idwarden`, `namawarden`, `nokpwarden`, `katalaluan`) VALUES
+(1, '', 0, '$2y$10$veYDegdd6jh9cxu2i1Saxei37O/umhl62ME8ZE5VQWhHNq2OD4kHC');
 
 --
 -- Indexes for dumped tables
@@ -109,25 +140,25 @@ ALTER TABLE `warden`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `idadmin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idadmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pelajar`
 --
 ALTER TABLE `pelajar`
-  MODIFY `idpelajar` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idpelajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `peralatan`
 --
 ALTER TABLE `peralatan`
-  MODIFY `idperalatan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idperalatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `warden`
 --
 ALTER TABLE `warden`
-  MODIFY `idwarden` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `idwarden` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
